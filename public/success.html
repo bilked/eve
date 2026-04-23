@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ Pagamento Confirmado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 0.6s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #27ae60;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .next-steps {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .next-steps ol {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .next-steps li {
+            margin-bottom: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .button-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .button-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .footer {
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .success-icon {
+                font-size: 60px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✅</div>
+        <h1>Pagamento Confirmado!</h1>
+        <p class="message">Sua compra foi processada com sucesso.</p>
+
+        <div class="details">
+            <div class="detail-row">
+                <span class="detail-label">Session ID:</span>
+                <span class="detail-value" id="sessionId">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Hora:</span>
+                <span class="detail-value" id="timestamp">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-value">✅ Completo</span>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📋 Próximos Passos:</h3>
+            <ol>
+                <li>Verifique sua caixa de entrada no Discord</li>
+                <li>Abra uma DM com o bot Eve</li>
+                <li>Seus produtos serão entregues automaticamente</li>
+                <li>Aproveite suas compras! 🎉</li>
+            </ol>
+        </div>
+
+        <div class="button-group">
+            <a href="/" class="button button-primary">🏠 Voltar para Loja</a>
+            <a href="#" class="button button-secondary" onclick="window.close(); return false;">Fechar</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Zany Bot - Pagamentos Seguros</p>
+            <p>Se tiver dúvidas, entre em contato com o suporte.</p>
+        </div>
+    </div>
+
+    <script>
+        // Pegar Session ID da URL
+        const sessionId = new URLSearchParams(window.location.search).get('session_id');
+        if (sessionId) {
+            document.getElementById('sessionId').textContent = sessionId.substring(0, 20) + '...';
+        }
+
+        // Mostrar hora atual
+        const now = new Date();
+        document.getElementById('timestamp').textContent = now.toLocaleString('pt-BR');
+    </script>
+</body>
+</html>
