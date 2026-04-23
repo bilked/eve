@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❌ Pagamento Cancelado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cancel-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .reasons {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .reasons h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .reasons ul {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        .reasons li {
+            margin-bottom: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .button-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .footer {
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .support {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            color: #1976d2;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .cancel-icon {
+                font-size: 60px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cancel-icon">❌</div>
+        <h1>Pagamento Cancelado</h1>
+        <p class="message">Você cancelou a transação ou ela expirou.</p>
+
+        <div class="reasons">
+            <h3>⏱️ O que você pode fazer:</h3>
+            <ul>
+                <li>Tentar novamente mais tarde</li>
+                <li>Usar outro método de pagamento</li>
+                <li>Verificar seus dados de cartão</li>
+                <li>Entrar em contato com o suporte</li>
+            </ul>
+        </div>
+
+        <div class="support">
+            💬 Dúvidas? Entre em contato com nosso suporte no Discord!
+        </div>
+
+        <div class="button-group">
+            <a href="/" class="button button-primary">🛍️ Voltar para Loja</a>
+            <a href="https://discord.gg/seu-servidor" class="button button-secondary">📞 Suporte</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Eve Bot - Pagamentos Seguros</p>
+            <p>Seu dinheiro não foi debitado.</p>
+        </div>
+    </div>
+</body>
+</html>
