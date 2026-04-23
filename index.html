@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛍️ Loja Eve - Pagamentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .info-box strong {
+            color: #333;
+        }
+
+        .info-box p {
+            color: #666;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .status {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .status.loading {
+            background: #e3f2fd;
+            color: #1976d2;
+            display: block;
+        }
+
+        .status.success {
+            background: #e8f5e9;
+            color: #388e3c;
+            display: block;
+        }
+
+        .status.error {
+            background: #ffebee;
+            color: #d32f2f;
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ddd;
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features li {
+            padding: 10px 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li:before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🛍️</div>
+            <h1>Loja Zany</h1>
+            <p>Sistema de Pagamentos Seguro</p>
+            <span class="badge">Powered by Stripe</span>
+        </div>
+
+        <div class="info-box">
+            <strong>💳 Pagamentos Seguros</strong>
+            <p>Todos os pagamentos são processados de forma segura e criptografada pelo Stripe.</p>
+        </div>
+
+        <div class="status loading" id="status">
+            <div class="spinner"></div>
+            <strong>Processando seu pagamento...</strong>
+        </div>
+
+        <ul class="features">
+            <li>Processamento instantâneo</li>
+            <li>Reembolso garantido em 5-7 dias</li>
+            <li>Suporte 24/7</li>
+            <li>Sem dados salvos</li>
+            <li>Criptografia SSL</li>
+        </ul>
+
+        <div class="footer">
+            <p>© 2024 Zany Bot. Todos os direitos reservados.</p>
+            <p>Endpoint de pagamentos | <a href="#" style="color: #667eea; text-decoration: none;">Status</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar status inicial
+        document.getElementById('status').classList.add('loading');
+
+        // Simular processamento
+        setTimeout(() => {
+            const status = document.getElementById('status');
+            status.innerHTML = '<strong>✅ Servidor Online</strong><p>Pronto para processar pagamentos</p>';
+            status.classList.remove('loading');
+            status.classList.add('success');
+        }, 2000);
+    </script>
+</body>
+</html>
